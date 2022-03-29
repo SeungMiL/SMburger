@@ -11,6 +11,7 @@ const Product = ({ pizza }) => {
   const [quantity, setQuantity] = useState(1);
   const [extras, setExtras] = useState([]);
   const dispatch = useDispatch();
+  
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -97,7 +98,7 @@ const Product = ({ pizza }) => {
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `https://smburger.herokuapp.com/api/products/${params.id}`
+    `http://localhost:3000/api/products/${params.id}`
   );
   return {
     props: {

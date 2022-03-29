@@ -24,7 +24,7 @@ const Cart = () => {
 
   const createOrder = async (data) => {
     try {
-      const res = await axios.post("https://smburger.herokuapp.com/api/orders", data);
+      const res = await axios.post("http://localhost:3000/api/orders", data);
       if (res.status === 201) {
         dispatch(reset());
         router.push(`/orders/${res.data._id}`);
@@ -123,7 +123,7 @@ const Cart = () => {
                 </td>
                 <td>
                   <span className={styles.extras}>
-                    {product.extras.map((extra) => (
+                    {product.extras && product.extras.map((extra) => (
                       <span key={extra._id}>{extra.text}, </span>
                     ))}
                   </span>
