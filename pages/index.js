@@ -33,7 +33,7 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("https://smburger.herokuapp.com/api/products");
+  const res = await axios.get("https://sm-burger.vercel.app/api/products");
   return {
     props: {
       pizzaList: res.data,

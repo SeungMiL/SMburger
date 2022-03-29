@@ -12,7 +12,7 @@ const Index = ({ orders, products }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        "https://smburger.herokuapp.com/api/products/" + id
+        "https://sm-burger.vercel.app/api/products/" + id
       );
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
     } catch (err) {
@@ -25,7 +25,7 @@ const Index = ({ orders, products }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put("https://smburger.herokuapp.com/api/orders/" + id, {
+      const res = await axios.put("https://sm-burger.vercel.app/api/orders/" + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -129,8 +129,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("https://smburger.herokuapp.com/api/products");
-  const orderRes = await axios.get("https://smburger.herokuapp.com/api/orders");
+  const productRes = await axios.get("https://sm-burger.vercel.app/api/products");
+  const orderRes = await axios.get("https://sm-burger.vercel.app/api/orders");
 
   return {
     props: {
