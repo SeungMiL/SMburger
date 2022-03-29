@@ -57,6 +57,16 @@
   margin-top: 20px;
 }
 
+
+.tr td{
+  text-align: center;
+}
+
+.tr td:first-child{
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 480px) {
   .container {
     flex-direction: column;
